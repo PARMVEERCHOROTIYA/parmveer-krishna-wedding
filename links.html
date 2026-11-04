@@ -1,0 +1,9 @@
+<!doctype html><html lang="hi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>मेहमान लिंक बनाएँ</title>
+<body style="font-family:sans-serif;max-width:560px;margin:20px auto;padding:0 14px">
+<h2>मेहमान के नाम वाला लिंक</h2>
+<p>1) अपनी वेबसाइट का पता लिखें (जैसे https://aapka-naam.netlify.app/)<br>2) हर लाइन में एक नाम लिखें</p>
+<input id="u" style="width:100%;padding:10px" placeholder="https://aapka-naam.netlify.app/">
+<textarea id="n" rows="6" style="width:100%;padding:10px;margin-top:8px" placeholder="रमेश&#10;सुरेश"></textarea>
+<button onclick="g()" style="padding:12px 20px;margin-top:8px">लिंक बनाएँ</button><div id="o"></div>
+<script>function g(){var u=document.getElementById('u').value.trim().replace(/index\.html$/,'');if(u&&!/\/$/.test(u))u+='/';var o=document.getElementById('o');o.innerHTML='';
+document.getElementById('n').value.split('\n').map(function(x){return x.trim()}).filter(Boolean).forEach(function(n){var l=u+'?naam='+encodeURIComponent(n);var t='आदरणीय '+n+' जी, आप सपरिवार सादर आमंत्रित हैं 🙏\n'+l;var d=document.createElement('p');var a=document.createElement('a');a.href='https://wa.me/?text='+encodeURIComponent(t);a.target='_blank';a.textContent='WhatsApp: '+n;var c=document.createElement('button');c.textContent='कॉपी';c.style.marginLeft='8px';c.onclick=function(){navigator.clipboard&&navigator.clipboard.writeText(l)};d.appendChild(a);d.appendChild(c);o.appendChild(d)})}</script></body></html>
